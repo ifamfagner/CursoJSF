@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
- 	xmlns:h="http://xmlns.jcp.org/jsf/html">
+ 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+ 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 
 <meta charset="UTF-8"/>
@@ -26,11 +27,38 @@
 						<h:inputText id="nomeFansatia"/>
 						
 						<h:outputLabel for="nomeFansatia" value="Tipo Empresa:"/>
+						
 						<h:selectOneMenu id="for" for="tipo">
-										
+								<f:selectItem itemLabel="Selecione o tipo de Empresa"/>
+								<f:selectItem itemLabel="MEI" itemValue="MEI"/>
+								<f:selectItem itemLabel="LTDA" itemValue="LTDA"/>
+									
 						</h:selectOneMenu>
 						
-					</h:panelGrid>		
+						<h:outputLabel></h:outputLabel>
+						<h:commandButton value="Salvar"></h:commandButton>
+						
+					</h:panelGrid>
+					
+					<h:dataTable value="#{[0,0,0,0]}">
+							<h:column>
+									<f:facet name="header">
+											<h:outputText value="Razão Social"/>
+									</f:facet>
+									
+									<h:outputText value="Teste"/>
+							</h:column>
+							
+							<h:column>
+									<f:facet name="header">
+											<h:outputText value="Tipo Empresa"/>
+									</f:facet>
+									
+									<h:outputText value="LTDA"/>
+							</h:column>
+							
+							
+					</h:dataTable>		
 			</h:form>
 	</div>
 	
